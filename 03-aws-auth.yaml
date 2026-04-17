@@ -16,4 +16,4 @@ data:
     - userarn: arn:aws:iam::160885265516:user/suresh
       username: suresh
       groups:
-        - roboshop-trainee  
+        - system:masters
