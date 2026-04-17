@@ -17,8 +17,20 @@ data:
       username: suresh
       groups:
         - system:masters
-
-    - userarn: arn:aws:iam::593300579669:user/Ramesh
+    - groups:
+      - roboshop-trainee
+      userarn: arn:aws:iam::593300579669:user/John
+      username: john
+    - groups:
+      - roboshop-trainee
+      userarn: arn:aws:iam::593300579669:user/Rahim
+      username: rahim    
+    - roboshop-admin
+      userarn: arn:aws:iam::160885265516:user/ramesh
       username: ramesh
-      groups:
-        - roboshop-admin
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2026-04-15T02:15:39Z"
+  name: aws-auth
+  namespace: kube-system
+  uid: 8af307e2-efaf-413c-98f5-c2726eb750dc        
