@@ -3,7 +3,6 @@ kind: ConfigMap
 metadata:
   name: aws-auth
   namespace: kube-system
-
 data:
   mapRoles: |
     - rolearn: arn:aws:iam::593300579669:role/<NODE-INSTANCE-ROLE>
@@ -11,23 +10,9 @@ data:
       groups:
         - system:bootstrappers
         - system:nodes
-
   mapUsers: |
     - userarn: arn:aws:iam::593300579669:user/Suresh
       username: suresh
-      groups:
-        - system:masters
-    - groups:
-      - roboshop-trainee
-      userarn: arn:aws:iam::593300579669:user/John
-      username: john
-    - groups:
-      - roboshop-trainee
-      userarn: arn:aws:iam::593300579669:user/Rahim
-      username: rahim    
-    - roboshop-admin
-      userarn: arn:aws:iam::160885265516:user/ramesh
-      username: ramesh
 kind: ConfigMap
 metadata:
   creationTimestamp: "2026-04-15T02:15:39Z"
