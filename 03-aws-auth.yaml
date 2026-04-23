@@ -10,11 +10,23 @@ data:
       groups:
         - system:bootstrappers
         - system:nodes
-  mapUsers: |
-    - userarn: arn:aws:iam::593300579669:user/Suresh
+    mapUsers: |
+    - groups:
+      - roboshop-trainee
+      userarn: arn:aws:iam::593300579669:user/Suresh
       username: suresh
-      groups:
-        - system:masters
+    - groups:
+      - roboshop-trainee
+      userarn: arn:aws:iam::593300579669:user/John
+      username: john
+    - groups:
+      - roboshop-trainee
+      userarn: arn:aws:iam::593300579669:user/Rahim
+      username: rahim
+    - groups:
+      - roboshop-admin
+      userarn: arn:aws:iam::593300579669:user/Ramesh
+      username: ramesh
 metadata:
   creationTimestamp: "2026-04-15T02:15:39Z"
   name: aws-auth
