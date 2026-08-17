@@ -1,4 +1,9 @@
 apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: kube-system
+
 data:
   mapRoles: |
     - groups:
@@ -6,18 +11,14 @@ data:
       - system:nodes
       rolearn: arn:aws:iam::111122223333:role/my-role
       username: system:node:{{EC2PrivateDNSName}}
+
     - groups:
       - eks-console-dashboard-full-access-group
       rolearn: arn:aws:iam::111122223333:role/my-console-viewer-role
       username: my-console-viewer-role
+
   mapUsers: |
     - groups:
       - roboshop-trainee
       userarn: arn:aws:iam::353617811136:user/suresh
       username: suresh
-kind: ConfigMap
-metadata:
-  creationTimestamp: "2026-04-15T02:15:39Z"
-  name: aws-auth
-  namespace: kube-system
-  uid: 8af307e2-efaf-413c-98f5-c2726eb750dc     
