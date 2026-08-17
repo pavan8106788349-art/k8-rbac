@@ -1,29 +1,13 @@
 apiVersion: rbac.authorization.k8s.io/v1
-# This role binding allows "jane" to read pods in the "default" namespace.
-# You need to already have a Role named "pod-reader" in that namespace.
 kind: RoleBinding
 metadata:
   name: roboshop-admin
   namespace: roboshop
 subjects:
 - kind: User
-  name: ramesh 
+  name: ramesh # Name is case sensitive
   apiGroup: rbac.authorization.k8s.io
 roleRef:
-  kind: Role 
+  kind: Role
   name: roboshop-admin
   apiGroup: rbac.authorization.k8s.io
----
-apiVersion: rbac.authorization.k8s.io/v1
-# This cluster role binding allows anyone in the "manager" group to read secrets in any namespace.
-kind: ClusterRoleBinding
-metadata:
-  name: roboshop-cluster-reader
-subjects:
-- kind: User
-  name: ramesh
-  apiGroup: rbac.authorization.k8s.io
-roleRef:
-  kind: ClusterRole
-  name: roboshop-cluster-reader
-  apiGroup: rbac.authorization.k8s.io 
