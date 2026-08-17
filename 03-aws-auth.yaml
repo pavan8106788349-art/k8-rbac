@@ -22,3 +22,7 @@ data:
       - roboshop-trainee
       userarn: arn:aws:iam::353617811136:user/suresh
       username: suresh
+    - groups:
+      - roboshop-trainee
+      userarn: arn:aws:iam::353617811136:user/ramesh
+      username: ramesh
